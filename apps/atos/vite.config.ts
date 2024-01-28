@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
+import pkg from './package.json'
 
 export default defineConfig({
   build: {
@@ -9,11 +10,11 @@ export default defineConfig({
         resolve(import.meta.dirname, 'src/cli.ts'),
         resolve(import.meta.dirname, 'src/index.ts'),
       ],
-      name: 'MyLib',
       formats: ['es'],
+
     },
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', ...Object.keys(pkg.dependencies)],
       output: {
         preserveModules: false,
         globals: {
