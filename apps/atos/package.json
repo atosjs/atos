@@ -1,0 +1,32 @@
+{
+  "name": "axto",
+  "version": "0.0.1-alpha.2",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pub": "npm publish",
+    "build": "vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "bin": {
+    "atos": "./bin/cli.js"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.0.12",
+    "vite-plugin-dts": "^3.7.2"
+  }
+}
